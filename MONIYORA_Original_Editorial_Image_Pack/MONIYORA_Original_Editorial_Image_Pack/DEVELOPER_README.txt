@@ -2,7 +2,7 @@ MONIYORA — ORIGINAL EDITORIAL IMAGE CONCEPT PACK
 Prepared for the MONIYORA web developer.
 
 CONTENTS
-Four original AI-generated editorial concept-board images:
+Four original AI-generated editorial concept-board 
 01–04. Brand, homepage, category, and campaign moodboards.
 
 INTENDED USE

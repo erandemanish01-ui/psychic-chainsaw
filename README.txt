@@ -22,10 +22,9 @@ STRIPE CHECKOUT (added)
 - Live Stripe account (Moniyora Ltd): 11 SKUs MON-001..MON-011 (site ids 9-19, metadata sku/asin)
   + 3 original products (ids 1 blazer, 4 vase, 8 cushion £59). Ids 2,3,5,6,7 archived — never reuse those ids.
 - Product images: product_images/MON-xxx.jpg (draft, user-supplied — confirm image rights before launch).
-- "Proceed to checkout" posts the bag to /api/checkout (netlify/functions/create-checkout-session.mjs),
-  which creates a Stripe Checkout Session using server-side price IDs and redirects the shopper to Stripe.
-- To go live: deploy the folder to Netlify, then in Netlify > Site configuration > Environment variables
-  add STRIPE_SECRET_KEY = your Stripe secret key (sk_live_... or a restricted key with Checkout Sessions write).
-  Never put the secret key in index.html or script.js.
-- Changing a price: create a new price in Stripe and update the PRICES map in the function, plus the price in script.js.
-- Opening index.html directly from disk will NOT work for checkout; use the deployed site or `netlify dev`.
+- "Proceed to checkout" posts the bag to /api/checkout. The logic and price IDs are in lib/checkout.mjs;
+  api/checkout.mjs serves it on Vercel, netlify/functions/create-checkout-session.mjs on Netlify.
+- The host must have STRIPE_SECRET_KEY set. Vercel: Project > Settings > Environment Variables (Production), then redeploy.
+  Never put the secret key in any site file.
+- Changing a price: create a new price in Stripe and update the PRICES map in lib/checkout.mjs, plus the price in script.js.
+- Opening index.html directly from disk will NOT work for checkout; use the deployed site or `vercel dev` / `netlify dev`.

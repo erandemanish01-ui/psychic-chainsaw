@@ -11,7 +11,7 @@ Interactive prototype:
 - Search, rotating hero, responsive mobile menu
 - Product cards and add-to-bag
 - Shopping bag quantity updates and subtotal
-- Account, seller registration, wholesale and order tracking form interfaces
+- Seller registration, wholesale and order tracking form interfaces
 - Newsletter form interface
 
 Not production-connected:
